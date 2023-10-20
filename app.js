@@ -19,9 +19,7 @@ app.set('trust proxy', 1);
 app.use(express.json());
 app.use(helmet())
 app.use(xss())
-app.use(cors({
-  origin: 'https://rad-haupia-11e242.netlify.app/'
-}))
+app.use(cors())
 app.use(rateLimiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, //limit each ip to 100 requests per windowMs
