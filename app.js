@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(helmet())
 app.use(xss())
 app.use(cors({
-  origin: ['http://192.168.1.7:5173', 'https://6532edac307ae21db4c84f28--rad-haupia-11e242.netlify.app/']
+  origin: 'https://rad-haupia-11e242.netlify.app/'
 }))
 app.use(rateLimiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
