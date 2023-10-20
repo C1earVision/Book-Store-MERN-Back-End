@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(helmet())
 app.use(xss())
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'https://rad-haupia-11e242.netlify.app/'
 }))
 app.use(rateLimiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
