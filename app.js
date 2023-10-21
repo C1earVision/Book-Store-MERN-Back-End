@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(helmet())
 app.use(xss())
 app.use(cors({
-  origin: "https://book-app-store.netlify.app/"
+  origin: "https://book-app-store.netlify.app"
 }))
 app.use(rateLimiter({
   windowMs: 15 * 60 * 1000, // 15 minutes
