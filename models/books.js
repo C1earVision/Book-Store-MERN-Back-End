@@ -29,6 +29,11 @@ const booksSchema = new mongoose.Schema({
     required: [true, 'Please provide the discreption of the book'],
     minlength:5,
   },
+  authorDetails:{
+    type:String,
+    required: [true, 'Please provide the discreption of the book'],
+    minlength:5,
+  },
   createdAt:{
     type:Date,
     default: Date.now()
