@@ -41,9 +41,9 @@ const getAllBooks = async (req, res)=>{
     });
   }
   const page = Number(req.query.page) || 1
-  const limit = 20
-  const skip = (page-1) * limit;
-  result = result.skip(skip).limit(limit)
+  const limit = 6
+  const loadmore = page * limit
+  result = result.limit(loadmore)
 
   const books = await result 
   res.status(200).json({count: books.length, books})
