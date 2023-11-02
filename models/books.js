@@ -21,7 +21,7 @@ const booksSchema = new mongoose.Schema({
     default: 30
   },
   genre:{
-    type:Array,
+    type:String,
     required: [true, 'Please provide the genres for the book'],
   },
   discreption:{
