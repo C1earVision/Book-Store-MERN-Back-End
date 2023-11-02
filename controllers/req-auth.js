@@ -9,6 +9,7 @@ const addBook = async (req,res)=>{
   if(!admin){
     throw new CustomAPIError('this user has no access to this route', StatusCodes.UNAUTHORIZED)
   }
+  req.body.genre = req.body.genre.split(', ').sort().join(', ')
   req.body.createdBy = userId
   const book = await Books.create(req.body)
   res.status(StatusCodes.CREATED).json({book})
