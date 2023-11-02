@@ -12,7 +12,12 @@ const getAllBooks = async (req, res)=>{
     querys.author = author
   }
   if(genre){
-    querys.genre = { $regex: genre, $options: 'i'}
+    const dataBaseGenre = Books.find({},'genre')
+    Object.entries(dataBaseGenre).map((data)=>{
+      if(data.split(', ').sort().join(', ') === genre.split(', ').sort().join(', ')){
+        querys.genre = genre
+      }
+    })
   }
   let result = Books.find(querys)
   if(sort){
