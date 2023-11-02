@@ -12,7 +12,7 @@ const getAllBooks = async (req, res)=>{
     querys.author = author
   }
   if(genre){
-    querys.genre = { $regex: genre, $options: 'i'}
+    querys.genre = genre
   }
   let result = Books.find(querys)
   if(sort){
