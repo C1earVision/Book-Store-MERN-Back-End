@@ -20,6 +20,7 @@ const modifyBook = async (req, res)=>{
   if(!admin){
     throw new CustomAPIError('this user has no access to this route', StatusCodes.UNAUTHORIZED)
   }
+  req.body.genre = req.body.genre.split(', ').sort().join(', ')
   const book = await Books.findByIdAndUpdate({_id:id}, req.body, { new: true, runValidators: true })
   res.status(StatusCodes.OK).json({book})
 }
